@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 
 #loading the diabetes dataset to a pandas Dataframe
 
-diabetes_dataset  = pd.read_csv(r'C:\Users\Skylink\Desktop\Diabetes Prediction\diabetes.csv')
+diabetes_dataset  = pd.read_csv(r'diabetes.csv')
 
 # print(diabetes_dataset.head())
 
