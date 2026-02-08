@@ -20,9 +20,29 @@ diabetes_dataset  = pd.read_csv(r'C:\Users\Skylink\Desktop\Diabetes Prediction\d
 # print(diabetes_dataset.describe())
 
 #total outcome values in this dataset
-print(diabetes_dataset['Outcome'].value_counts())
+# print(diabetes_dataset['Outcome'].value_counts())
 
 # 0 - Non-Diabetic
 # 1 - Diabetic
 
-print(diabetes_dataset.groupby('Outcome').mean())
+# print(diabetes_dataset.groupby('Outcome').mean())
+
+#separating the data and lables
+X = diabetes_dataset.drop(columns='Outcome', axis=1)
+Y = diabetes_dataset['Outcome']
+
+# print(X)
+# print(Y)
+
+#Data Standardization
+scaler = StandardScaler()
+scaler.fit(X)
+standardized_data = scaler.transform(X)
+# print(standardized_data)
+
+X = standardized_data
+Y = diabetes_dataset['Outcome']
+
+print(X)
+print(Y)
+
